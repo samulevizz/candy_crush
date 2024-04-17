@@ -5,9 +5,6 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
 public class OnSwipeListener implements View.OnTouchListener {
     private final GestureDetector gestureDetector;
 
@@ -18,6 +15,22 @@ public class OnSwipeListener implements View.OnTouchListener {
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         return gestureDetector.onTouchEvent(event);
+    }
+
+    void swipeLeft() {
+        // Implement swipeLeft action
+    }
+
+    void swipeRight() {
+        // Implement swipeRight action
+    }
+
+    void swipeUp() {
+        // Implement swipeUp action
+    }
+
+    void swipeDown() {
+        // Implement swipeDown action
     }
 
     private final class GestureListener extends GestureDetector.SimpleOnGestureListener {
@@ -37,39 +50,23 @@ public class OnSwipeListener implements View.OnTouchListener {
             if (Math.abs(diffX) > Math.abs(diffY)) {
                 if (Math.abs(diffX) > SWIPE_THRESHOLD && Math.abs(velocityX) > SWIPE_VELOCITY_THRESHOLD) {
                     if (diffX > 0) {
-                        SwipeRight();
+                        swipeRight();
                     } else {
-                        SwipeLeft();
+                        swipeLeft();
                     }
                     result = true;
                 }
             } else {
                 if (Math.abs(diffY) > SWIPE_THRESHOLD && Math.abs(velocityY) > SWIPE_VELOCITY_THRESHOLD) {
                     if (diffY > 0) {
-                        SwipeDown();
+                        swipeDown();
                     } else {
-                        SwipeUp();
+                        swipeUp();
                     }
                     result = true;
                 }
             }
             return result;
         }
-    }
-
-    void SwipeLeft() {
-        // Implement SwipeLeft action
-    }
-
-    void SwipeRight() {
-        // Implement SwipeRight action
-    }
-
-    void SwipeUp() {
-        // Implement SwipeUp action
-    }
-
-    void SwipeDown() {
-        // Implement SwipeDown action
     }
 }
