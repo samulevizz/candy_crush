@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     };
     private final ArrayList<ImageView> candy = new ArrayList<>();
     private final int notCandy = R.drawable.transparent;
-    private final int interval = 100;
+    int interval = 100;
     private int widthOfBlock, noOfBlocks = 8, widthOfScreen;
     private int candyToBeDragged, candyToBeReplaced;
     private Handler mHandler;
